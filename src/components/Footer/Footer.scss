@@ -1,10 +1,6 @@
 @use '../../scss/tools/index';
 
 .footer {
-  position: sticky;
-  bottom: 0;
-  z-index: 1000;
-
   background-color: index.$background-disabled;
   backdrop-filter: blur(10px);
 
