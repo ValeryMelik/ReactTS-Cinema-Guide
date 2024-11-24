@@ -8,7 +8,7 @@ interface IconProps extends React.SVGProps<SVGSVGElement> {
 const Icon: FC<IconProps> = ({ name, className, ...props }) => {
   return (
     <svg className={`svg-reset ${className ?? ''}`} {...props}>
-      <use href={`/img/sprite.svg#${name}`} />
+      <use href={`/ReactTS-Cinema-Guide/img/sprite.svg#${name}`} />
     </svg>
   );
 };

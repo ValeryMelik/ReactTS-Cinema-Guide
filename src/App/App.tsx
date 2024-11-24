@@ -20,6 +20,7 @@ import useAuth from '../hooks/useAuth';
 import NotFound from '../pages/NotFound';
 import Snackbar from '../components/Snackbar';
 import Loader from '../components/Loader';
+import BASE_PATH from '../API/_basePath';
 
 function App(): React.ReactElement {
   const { isModalOpen } = useModal();
@@ -41,21 +42,33 @@ function App(): React.ReactElement {
       <Header />
       {isModalOpen && <Modal />}
       <Routes>
-        <Route path='/' element={<Navigate to='/home' replace />} />
-        <Route path='/home' element={<Home />} />
-        <Route path='/home/:movie' element={<Movie />} />
-        <Route path='/genres' element={<Genres />} />
-        <Route path='/genres/:genre' element={<GenreMoviesList />} />
-        <Route path='/genres/:genre/:movie' element={<Movie />} />
         <Route
-          path='/account'
-          element={<Navigate to='/account/favorites' replace />}
+          path={`${BASE_PATH}/`}
+          element={<Navigate to={`${BASE_PATH}/home`} replace />}
+        />
+        <Route path={`${BASE_PATH}/home`} element={<Home />} />
+        <Route path={`${BASE_PATH}/home/:movie`} element={<Movie />} />
+        <Route path={`${BASE_PATH}/genres`} element={<Genres />} />
+        <Route
+          path={`${BASE_PATH}/genres/:genre`}
+          element={<GenreMoviesList />}
+        />
+        <Route path={`${BASE_PATH}/genres/:genre/:movie`} element={<Movie />} />
+        <Route
+          path={`${BASE_PATH}/account`}
+          element={<Navigate to={`${BASE_PATH}/account/favorites`} replace />}
         />
 
-        <Route path='/account/:section' element={renderAccount()} />
+        <Route
+          path={`${BASE_PATH}/account/:section`}
+          element={renderAccount()}
+        />
 
-        <Route path='/not-found' element={<NotFound />} />
-        <Route path='*' element={<Navigate to='/not-found' replace />} />
+        <Route path={`${BASE_PATH}/not-found`} element={<NotFound />} />
+        <Route
+          path='*'
+          element={<Navigate to={`${BASE_PATH}/not-found`} replace />}
+        />
       </Routes>
       <Snackbar />
       <Footer />
