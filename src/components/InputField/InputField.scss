@@ -1,0 +1,106 @@
+@use '../../scss/tools/index';
+
+.input-field {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 0 16px;
+
+  min-width: 340px;
+
+  @media (max-width: 768px) {
+    min-width: 295px;
+  }
+
+  outline: 1px solid index.$content-placeholder;
+  border-radius: 8px;
+
+  transition: outline-color 0.3s ease-in-out;
+
+  &:not(:last-of-type) {
+    margin-bottom: 12px;
+  }
+
+  &:hover {
+    outline-color: index.$content-active;
+    svg {
+      fill: index.$content-active;
+    }
+  }
+
+  &_filled {
+    outline-color: index.$content-black;
+
+    input {
+      &::placeholder {
+        color: index.$content-black;
+      }
+
+      &:focus {
+        &::placeholder {
+          color: transparent;
+        }
+      }
+    }
+
+    svg {
+      fill: index.$content-black;
+    }
+  }
+
+  &_error {
+    outline-color: index.$content-error !important;
+
+    svg {
+      fill: index.$content-error !important;
+    }
+  }
+
+  &__input {
+    border: none;
+    background: transparent;
+    outline: none;
+
+    width: 100%;
+    line-height: 56px;
+
+    &,
+    &::placeholder {
+      color: index.$content-placeholder;
+      font-family: Play;
+      font-size: 18px;
+      font-weight: 400;
+
+      transition: color 0.3s ease-in-out;
+    }
+
+    & {
+      color: index.$content-black;
+    }
+  }
+
+  &:focus-within {
+    outline-color: index.$content-active;
+
+    svg {
+      fill: index.$content-active;
+    }
+  }
+
+  &__icon {
+    fill: index.$content-placeholder;
+  }
+
+  &__error {
+    position: absolute;
+    top: 1px;
+
+    font-size: 12px;
+    line-height: 12px;
+
+    color: index.$content-error;
+  }
+}

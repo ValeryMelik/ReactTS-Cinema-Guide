@@ -1,0 +1,25 @@
+@use '../../scss/tools/index';
+
+.favorite-movies {
+  &__empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 40px;
+
+    font-size: 44px;
+    line-height: 44px;
+    font-weight: 700;
+  }
+
+  .swiper {
+    margin-left: -20px;
+    margin-right: -20px;
+
+    margin-top: -90px;
+    margin-bottom: -90px;
+
+    padding: 90px 20px 90px;
+  }
+}

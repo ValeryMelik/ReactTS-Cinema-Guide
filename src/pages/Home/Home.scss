@@ -1,0 +1,5 @@
+@use '../../scss/tools/index';
+
+.home {
+  min-height: index.$vh100;
+}

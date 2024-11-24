@@ -1,0 +1,55 @@
+@use '../../scss/tools/index';
+
+.menu {
+  position: relative;
+  padding: 8px 0;
+
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  &,
+  span {
+    color: index.$white;
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+    text-decoration: none;
+
+    transition: color 0.3s ease-in-out;
+  }
+
+  svg {
+    fill: index.$primary;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background-color: index.$link-active;
+    transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+  }
+
+  &_active::after {
+    width: 100%;
+    left: 0;
+  }
+
+  &:hover,
+  &:active,
+  span:hover,
+  span:active {
+    &,
+    span {
+      color: index.$content-active;
+    }
+
+    svg {
+      fill: index.$content-active;
+    }
+  }
+}

@@ -1,0 +1,109 @@
+@use '../../scss/tools/index';
+
+.trailer {
+  position: relative;
+
+  width: 960px;
+  max-width: 100%;
+  height: 540px;
+  margin: 0 auto;
+
+  @media (max-width: 1150px) {
+    width: 100%;
+    height: calc(100vw * 9 / 16);
+  }
+
+  iframe {
+    pointer-events: none;
+  }
+
+  &__placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    width: 100%;
+    height: 100%;
+
+    padding: 24px;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+
+    &_loading {
+      background-color: index.$secondary;
+    }
+
+    &_pause {
+      .trailer__title,
+      .trailer__btn {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__title {
+    padding: 24px 40px;
+
+    width: 100%;
+
+    background-color: index.$background-black-half-transparent;
+
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+
+      line-height: 24px;
+    }
+
+    @include index.unvisible;
+  }
+
+  &__btn {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 40px;
+    background-color: index.$white;
+
+    @media (max-width: 768px) {
+      width: 64px;
+      height: 64px;
+    }
+
+    @include index.center;
+    @include index.unvisible;
+  }
+
+  &__icon {
+    width: 40px;
+    height: 40px;
+
+    @media (max-width: 768px) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  &:has(.trailer__placeholder_pause) + .modal__btn_unvisible {
+    @include index.visible;
+  }
+}

@@ -1,0 +1,44 @@
+@use '../../scss/tools/index';
+
+.btn {
+  padding: 16px 48px;
+
+  font-size: 18px;
+  line-height: 24px;
+
+  border-radius: 28px;
+
+  &[data-kind='primary'] {
+    background-color: index.$brand-active;
+
+    &:disabled {
+      color: index.$disabled !important;
+      background-color: index.$brand-disabled !important;
+    }
+
+    &:hover {
+      color: index.$primary;
+      background-color: index.$brand-hover;
+    }
+  }
+
+  &[data-kind='secondary'] {
+    background-color: index.$secondary;
+
+    &:disabled {
+      color: index.$disabled !important;
+      background-color: index.$black-disabled !important;
+
+      cursor: not-allowed;
+    }
+
+    &:hover {
+      color: index.$content-black;
+      background-color: index.$white;
+
+      svg {
+        fill: index.$content-black;
+      }
+    }
+  }
+}

@@ -1,0 +1,72 @@
+@use '../../scss/tools/index';
+
+.genres {
+  &__container {
+    padding-top: 64px;
+    padding-bottom: 160px;
+
+    @media (max-width: 768px) {
+      padding-top: 32px;
+      padding-bottom: 40px;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+    column-gap: 40px;
+    row-gap: 64px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(335px, 1fr));
+    }
+  }
+
+  &__cell {
+    width: 290px;
+    height: 304px;
+
+    border-radius: 24px;
+    border: 1px solid index.$background-shadow-light;
+    background: index.$background-black;
+
+    box-shadow: 0px 0px 80px 0px index.$background-shadow-dark;
+
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1, 1.1);
+    }
+
+    margin: 0 auto;
+
+    @media (max-width: 768px) {
+      width: 335px;
+    }
+  }
+
+  &__img {
+    max-height: 220px;
+
+    border-radius: 24px 24px 0 0;
+  }
+
+  &__name {
+    padding: 22px 0 30px;
+
+    text-align: center;
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  &__center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 100%;
+    max-height: 220px;
+    width: 100%;
+  }
+}

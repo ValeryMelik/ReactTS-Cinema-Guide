@@ -1,0 +1,5 @@
+@use '../../scss/tools/index';
+
+.movie-info {
+  min-height: index.$vh100;
+}

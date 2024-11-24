@@ -1,0 +1,84 @@
+@use '../tools/index';
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  outline: none;
+
+  font: 700 14px / 24px Play, sans-serif;
+  color: index.$primary;
+}
+
+body {
+  background-color: index.$background-black;
+}
+
+.svg-reset {
+  width: 24px;
+  height: 24px;
+
+  flex-shrink: 0;
+  fill: index.$background-black;
+
+  transition: fill 0.3s ease-in-out, stroke 0.3s ease-in-out;
+}
+
+.title-reset {
+  margin: 0;
+  margin-bottom: 64px;
+
+  font-size: 48px;
+  line-height: 56px;
+
+  @media (max-width: 768px) {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.btn-reset {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+  background-color: transparent;
+
+  transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+  cursor: pointer;
+}
+
+.img-reset {
+  display: block;
+
+  flex-shrink: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.link-reset {
+  color: inherit;
+  text-decoration: none;
+
+  transition: color 0.3s ease-in-out;
+}
+
+.margin-reset {
+  margin: 0;
+  padding: 0;
+}
+
+.list-reset {
+  list-style: none;
+
+  margin: 0;
+  padding: 0;
+}

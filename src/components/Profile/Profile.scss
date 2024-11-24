@@ -1,0 +1,77 @@
+@use '../../scss/tools/index';
+
+.profile {
+  display: flex;
+  flex-direction: column;
+
+  gap: 40px;
+
+  &__block {
+    display: flex;
+    gap: 16px;
+  }
+
+  &__circle {
+    display: flex;
+    width: 60px;
+    height: 60px;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+    line-height: 32px;
+    color: index.$primary;
+
+    border-radius: 30px;
+    background: index.$content-disabled;
+
+    @media (max-width: 768px) {
+      width: 48px;
+      height: 48px;
+    }
+  }
+
+  &__mail {
+    fill: index.$primary;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__head {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+
+    @media (max-width: 768px) {
+      color: index.$content-disabled;
+
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__body {
+    font-size: 24px;
+    line-height: 32px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 24px;
+    }
+  }
+
+  &__btn {
+    margin-top: 40px;
+
+    width: fit-content;
+
+    @media (max-width: 768px) {
+      margin-top: 0;
+      width: 100%;
+    }
+  }
+}

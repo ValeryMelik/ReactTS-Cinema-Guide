@@ -1,0 +1,35 @@
+@use '../../scss/tools/index';
+
+.account {
+  min-height: index.$vh100;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: 64px;
+
+    padding-top: 64px;
+    padding-bottom: 64px;
+
+    @media (max-width: 768px) {
+      gap: 40px;
+
+      padding-top: 24px;
+      padding-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 64px;
+
+    @media (max-width: 768px) {
+      z-index: 10;
+      gap: 24px;
+    }
+  }
+}

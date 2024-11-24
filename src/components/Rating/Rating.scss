@@ -1,0 +1,58 @@
+@use '../../scss/tools/index';
+
+.rating {
+  display: inline-flex;
+  align-items: center;
+  column-gap: 4px;
+
+  border-radius: 16px;
+
+  letter-spacing: 2px;
+
+  &__star {
+    fill: index.$primary;
+  }
+
+  &_large {
+    padding: 4px 12px;
+
+    svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    span {
+      font-size: 18px;
+    }
+  }
+
+  &_small {
+    padding: 2px 8px;
+
+    svg {
+      width: 10px;
+      height: 10px;
+    }
+
+    span {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  &_excellent {
+    background-color: index.$excellent;
+  }
+
+  &_good {
+    background-color: index.$good;
+  }
+
+  &_poor {
+    background-color: index.$poor;
+  }
+
+  &_bullshit {
+    background-color: index.$bullshit;
+  }
+}

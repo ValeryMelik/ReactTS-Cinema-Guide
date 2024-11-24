@@ -1,0 +1,76 @@
+@use '../../scss/tools/index';
+
+.search {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  background-color: index.$secondary;
+
+  padding: 12px 16px;
+
+  min-width: 425px;
+  width: 100%;
+  max-width: 559px;
+
+  height: 48px;
+
+  border-radius: 8px;
+
+  &_long {
+    min-width: 100%;
+  }
+
+  &__icon {
+    fill: index.$content-disabled;
+
+    width: 24px;
+    height: 24px;
+
+    &_active {
+      fill: index.$primary;
+    }
+  }
+
+  &__input {
+    margin-top: 1px;
+    border: none;
+    background: transparent;
+    width: 100%;
+    outline: none;
+
+    &,
+    &::placeholder {
+      color: index.$content-disabled;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+
+    & {
+      color: index.$primary;
+    }
+  }
+
+  &__clear {
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    padding: 5px;
+    margin: -5px;
+
+    display: flex;
+    align-items: center;
+
+    @include index.fadeVisibility(0.3s, ease-in-out);
+
+    & > svg {
+      fill: index.$primary;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}

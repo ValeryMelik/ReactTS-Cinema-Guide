@@ -1,0 +1,216 @@
+@use '../../scss/tools/index';
+
+.hero {
+  min-height: 680px;
+
+  @media (max-width: 768px) {
+    min-height: 0;
+  }
+
+  &__container {
+    position: relative;
+
+    padding-top: 106px;
+    padding-bottom: 122px;
+
+    height: 100%;
+    min-height: 680px;
+
+    @media (max-width: 768px) {
+      position: static;
+
+      padding: 0;
+
+      min-height: 0;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    margin-top: -96px;
+
+    display: inline-block;
+    width: 60%;
+    height: calc(100% + 96px);
+
+    img {
+      display: block;
+      width: 100%;
+
+      object-fit: cover;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        90deg,
+        #000 0%,
+        rgba(0, 0, 0, 0.5) 20.41%,
+        rgba(0, 0, 0, 0) 100%
+      );
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    @media (max-width: 768px) {
+      position: static;
+      margin: 0 -20px;
+
+      width: calc(100% + 20px);
+      height: 260px;
+
+      &::after {
+        content: none;
+      }
+
+      img {
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+
+    max-width: 600px;
+    height: 100%;
+    min-height: 680px;
+
+    @media (max-width: 768px) {
+      max-width: 100%;
+      padding: 24px 20px;
+
+      min-height: 0;
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+
+    column-gap: 16px;
+  }
+
+  &__year,
+  &__genre,
+  &__durating {
+    color: index.$content-disabled;
+    font-size: 18px;
+    font-weight: 400;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+
+  &__title {
+    margin-bottom: 0;
+  }
+
+  &__capture {
+    margin-bottom: 34px;
+
+    color: index.$content-disabled;
+
+    font-size: 24px;
+    font-weight: 400;
+    line-height: 32px;
+
+    @media (max-width: 768px) {
+      font-size: 18px;
+      line-height: 24px;
+
+      margin-bottom: 16px;
+    }
+  }
+
+  &__btns {
+    margin-top: auto;
+
+    display: flex;
+    gap: 16px;
+
+    @media (max-width: 768px) {
+      display: grid;
+
+      grid-template-areas:
+        'trailer trailer trailer trailer'
+        'about about like reload';
+    }
+
+    &_norandom {
+      @media (max-width: 768px) {
+        display: grid;
+
+        grid-template-areas: 'trailer trailer trailer like';
+      }
+    }
+  }
+
+  &__trailer {
+    grid-area: trailer;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__about {
+    grid-area: about;
+
+    @media (max-width: 768px) {
+      width: 100%;
+
+      padding-left: 38px;
+      padding-right: 38px;
+    }
+  }
+
+  &__like,
+  &__reload {
+    position: relative;
+    padding: 16px 34px;
+  }
+
+  &__like {
+    grid-area: like;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+
+    &_active svg {
+      fill: index.$content-active;
+    }
+  }
+
+  &__reload {
+    grid-area: reload;
+
+    @media (max-width: 768px) {
+      width: 100%;
+    }
+  }
+
+  &__svg {
+    @include index.center;
+    fill: index.$primary;
+  }
+
+  &__modal {
+    position: fixed;
+    z-index: 10000;
+  }
+}

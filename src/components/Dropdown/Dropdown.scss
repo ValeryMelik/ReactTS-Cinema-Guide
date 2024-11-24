@@ -1,0 +1,93 @@
+@use '../../scss/tools/index';
+
+.dropdown {
+  position: absolute;
+  top: calc(100% - 10px);
+  left: 0;
+
+  background-color: index.$secondary;
+  border-radius: 0 0 8px 8px;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  &__container {
+    padding: 8px;
+    padding-top: 18px;
+
+    @media (max-width: 768px) {
+      padding: 24px 20px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    display: flex;
+    gap: 16px;
+
+    padding: 20px 8px;
+
+    border-radius: 6px;
+    outline: 2px solid transparent;
+
+    transition: outline-color 0.3s ease-in-out;
+
+    cursor: pointer;
+
+    &:hover {
+      outline-color: index.$content-disabled;
+    }
+  }
+
+  &__img {
+    width: 40px;
+    height: 52px;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+  }
+
+  &__year,
+  &__genre,
+  &__durating {
+    color: index.$content-disabled;
+    font-size: 14px;
+
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  &__name {
+    font-size: 18px;
+  }
+
+  &__slider {
+    .dropdown__img {
+      width: 158px;
+      height: 206px;
+
+      margin-bottom: 16px;
+    }
+
+    .dropdown__top {
+      flex-wrap: wrap;
+
+      margin-bottom: 8px;
+    }
+  }
+}
