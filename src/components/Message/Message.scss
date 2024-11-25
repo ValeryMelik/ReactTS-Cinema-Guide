@@ -11,7 +11,6 @@
   padding: 32px;
   overflow: hidden;
 
-
   position: relative;
   z-index: 1000;
 
@@ -21,6 +20,10 @@
 
   width: 500px;
   // height: 150px;
+
+  @media (max-width: 768px) {
+    width: 335px;
+  }
 
   transition: transform 0.3s ease-in-out;
   animation: appearanceShift 500ms ease-in-out;
@@ -67,7 +70,6 @@
   &_hide {
     transform: translateX(-120%);
   }
-
 
   &_success {
     border-color: index.$success;

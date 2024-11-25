@@ -8,5 +8,5 @@ export default defineConfig({
   server: {
     open: true,
   },
-  base: '/ReactTS-Cinema-Guide/',
+  base: '/ReactTS-Cinema-Guide',
 });

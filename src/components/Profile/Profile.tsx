@@ -23,7 +23,7 @@ const Profile: FC = () => {
   >({
     mutationFn: API.getLogout,
     onSuccess: () => {
-      window.location.href = '/home';
+      window.location.href = '/ReactTS-Cinema-Guide/home';
     },
     onError: (err: CustomError): void => {
       showMessage({

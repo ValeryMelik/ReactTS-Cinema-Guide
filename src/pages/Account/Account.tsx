@@ -7,7 +7,6 @@ import Icon from '../../components/Icon/';
 import FavoriteMovies from '../../components/FavoriteMovies';
 import Profile from '../../components/Profile';
 import useMediaPoints from '../../hooks/useMediaPoints';
-import BASE_PATH from '../../API/_basePath';
 
 const Account: FC = () => {
   const location = useLocation();
@@ -29,9 +28,9 @@ const Account: FC = () => {
         <h2 className='title-reset account__title'>Мой аккаунт</h2>
         <nav className='account__nav'>
           <Menu
-            link={`${BASE_PATH}/account/favorites`}
-            isActive={activeLink.includes(`${BASE_PATH}/account/favorites`)}
-            onClick={() => handleLinkClick(`${BASE_PATH}/account/favorites`)}
+            link='/account/favorites'
+            isActive={activeLink.includes('/account/favorites')}
+            onClick={() => handleLinkClick('/account/favorites')}
           >
             <Icon name='like' className='account__svg' />
             <span className='account__capture'>
@@ -39,9 +38,9 @@ const Account: FC = () => {
             </span>
           </Menu>
           <Menu
-            link={`${BASE_PATH}/account/settings`}
-            isActive={activeLink.includes(`${BASE_PATH}/account/settings`)}
-            onClick={() => handleLinkClick(`${BASE_PATH}/account/settings`)}
+            link='/account/settings'
+            isActive={activeLink.includes('/account/settings')}
+            onClick={() => handleLinkClick('/account/settings')}
           >
             <Icon name='user' className='account__svg' />
             <span className='account__capture'>
@@ -50,10 +49,8 @@ const Account: FC = () => {
           </Menu>
         </nav>
 
-        {activeLink.includes(`${BASE_PATH}/account/favorites`) && (
-          <FavoriteMovies />
-        )}
-        {activeLink.includes(`${BASE_PATH}/account/settings`) && <Profile />}
+        {activeLink.includes('/account/favorites') && <FavoriteMovies />}
+        {activeLink.includes('/account/settings') && <Profile />}
       </div>
     </section>
   );

@@ -11,7 +11,6 @@ import useAuth from '../../hooks/useAuth';
 import Loader from '../Loader';
 import useMediaPoints from '../../hooks/useMediaPoints';
 import formatLongName from '../../utils/formatLongName';
-import BASE_PATH from '../../API/_basePath';
 
 const Header: FC = () => {
   const location = useLocation();
@@ -33,23 +32,23 @@ const Header: FC = () => {
   return (
     <header className='header'>
       <div className='header__container container'>
-        <Link to={`${BASE_PATH}/home`}>
+        <Link to={'/home'}>
           <Icon className='header__logo' name='logo'></Icon>
         </Link>
         <nav className='header__nav'>
           {isDesktop && (
             <Menu
-              link={`${BASE_PATH}/home`}
-              isActive={activeLink.includes(`${BASE_PATH}/home`)}
-              onClick={() => handleLinkClick(`${BASE_PATH}/home`)}
+              link='/home'
+              isActive={activeLink.includes('/home')}
+              onClick={() => handleLinkClick('/home')}
             >
               Главная
             </Menu>
           )}
           <Menu
-            link={`${BASE_PATH}/genres`}
-            isActive={activeLink.includes(`${BASE_PATH}/genres`)}
-            onClick={() => handleLinkClick(`${BASE_PATH}/genres`)}
+            link='/genres'
+            isActive={activeLink.includes('/genres')}
+            onClick={() => handleLinkClick('/genres')}
           >
             {!isMobile ? (
               'Жанры'
@@ -77,18 +76,16 @@ const Header: FC = () => {
             isMobile ? (
               <Menu
                 link='/account/favorites'
-                isActive={activeLink.includes(`${BASE_PATH}/account`)}
-                onClick={() =>
-                  handleLinkClick(`${BASE_PATH}/account/favorites`)
-                }
+                isActive={activeLink.includes('/account')}
+                onClick={() => handleLinkClick('/account/favorites')}
               >
                 <Icon name='user' className='header__icon' />
               </Menu>
             ) : (
               <Menu
                 link='/account/favorites'
-                isActive={activeLink.includes(`${BASE_PATH}/account`)}
-                onClick={() => handleLinkClick(`${BASE_PATH}/account/favorites`)}
+                isActive={activeLink.includes('/account')}
+                onClick={() => handleLinkClick('/account/favorites')}
               >
                 {formatLongName(userProfile!.name)}
               </Menu>
